@@ -1,17 +1,24 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
-  "engines": {
-    "node": ">=6.13.0"
-  },
+  "name": "proxy_danny",
+  "version": "1.0.0",
+  "description": "Proxy Server",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YumpSF/Proxy_Danny.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YumpSF/Proxy_Danny/issues"
+  },
+  "homepage": "https://github.com/YumpSF/Proxy_Danny#readme",
   "dependencies": {
-  },
-  "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
   }
 }
