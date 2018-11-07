@@ -59,8 +59,8 @@ const Wrapper = styled.div`
     margin-bottom: 120px;
     svg {
       fill: #666666;
-      height: 20px;
-      width: 20px;
+      height: 18px;
+      width: 18px;
       padding: 5px 3px 5px 5px;
       margin-right: 5px;
       &.save {
@@ -112,7 +112,7 @@ const AddressWrapper = styled.div`
 
 class Pictures extends React.Component {
   static fetchData(id, callback) {
-    axios.get(`http://localhost:9001/api/${id}`)
+    axios.get(`/api/${id}`)
       .then((response) => {
         callback(response.data);
       });

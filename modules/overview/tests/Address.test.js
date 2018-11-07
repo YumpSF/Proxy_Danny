@@ -2,7 +2,7 @@ import React from 'react';
 import Address from '../client/components/Address.jsx';
 import { shallow, mount, render } from 'enzyme';
 
-const mockProps = {
+const mockProps = { 
   address: "71138 Crist Plains, Langoshstad, Oregon, 27302",
   phone: "999-377-4892",
   website: "https://tad.net",
