@@ -1,0 +1,3 @@
+[submodule "modules/reservation-hours"]
+	path = modules/reservation-hours
+	url = https://github.com/YumpSF/reservation-hours.git
