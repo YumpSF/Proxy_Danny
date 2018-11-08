@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     padding-right: 5px;
     margin: 10px 10px;
     height: 18px;
-    width: 18px;
+    width: 30px;
   }
   h1 {
     font-family: serif;
