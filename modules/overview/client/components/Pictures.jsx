@@ -59,8 +59,8 @@ const Wrapper = styled.div`
     margin-bottom: 120px;
     svg {
       fill: #666666;
-      height: 18px;
-      width: 18px;
+      height: 20px;
+      width: 20px;
       padding: 5px 3px 5px 5px;
       margin-right: 5px;
       &.save {
