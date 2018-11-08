@@ -112,7 +112,7 @@ const AddressWrapper = styled.div`
 
 class Pictures extends React.Component {
   static fetchData(id, callback) {
-    axios.get(`/api/${id}`)
+    axios.get(`http://localhost:9001/api/${id}`)
       .then((response) => {
         callback(response.data);
       });

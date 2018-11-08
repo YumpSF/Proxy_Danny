@@ -6,54 +6,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 import $ from 'jquery';
 
-const FullMenu = styled.div`
-  font-family: arial;
-  font-size: 14px;
-  color: #0073bb;
-  vertical-align: bottom;
-  /* position: fixed; */
-  /* right: 75px;     */
-  `;
-FullMenu.displayName = 'FullMenu';
-
-const TitleMenuContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  /* position: fixed; */
-  flex-direction: row;
-  justify-content: space-between;
-`;
-TitleMenuContainer.displayName = 'TitleMenuContainer';
-
-const FullMenuAndArrowsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-const ArrowsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    background-color: white;
-`;
-const LeftArrow = styled.button`
-  height: 20px;
-  width: 30px;
-  padding-left: 2px;
-  border: none;
-  outline: none;
-`;
-LeftArrow.displayName = 'LeftArrow';
-const RightArrow = styled.button`
-  height: 20px;
-  width: 30px;
-  border: none;
-  /* position: fixed; */
-  /* right: 40px; */
-  outline: none;
-`;
-RightArrow.displayName = 'RightArrow';
-
-
 const Title = styled.div`
   text-align: left;
   padding-left: 10px;
@@ -65,8 +17,20 @@ const Title = styled.div`
 `;
 Title.displayName = 'Title';
 
+const FullMenu = styled.div`
+  font-family: arial;
+  font-size: 14px;
+  color: #0073bb;
+  vertical-align: bottom;
+  right: 75px;    
+  `;
+FullMenu.displayName = 'FullMenu';
+
 const MainContainer = styled.div`
   padding-left: 15px;
+    .menuClick {
+     display: flex;
+    }
     .hoverOn {
       text-decoration: underline;
     }
@@ -74,12 +38,14 @@ const MainContainer = styled.div`
       text-decoration: none;
     }
 `;
+
 MainContainer.displayName = 'MainContainer';
 
 const PopularDishesContainer = styled.div`
   padding-top: 30px;
   vertical-align: middle;
   display: inline-block;
+  height: 275px;
   width: 98%;
   white-space: nowrap;
   overflow-x: auto;
@@ -98,6 +64,31 @@ const PopularDishSpanHolder = styled.div`
   border-color: #999999;
   border-width: .5px;
 `;
+
+const TitleMenuContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
+TitleMenuContainer.displayName = 'TitleMenuContainer';
+
+const LeftArrow = styled.button`
+  height: 20px;
+  width: 30px;
+  border: none;
+  right: 15px;
+  outline: none;
+`;
+LeftArrow.displayName = 'LeftArrow';
+
+const RightArrow = styled.button`
+  height: 20px;
+  width: 30px;
+  border: none;
+  right: 40px;
+  outline: none;
+`;
+RightArrow.displayName = 'RightArrow';
 
 class App extends React.Component {
   constructor(props) {
@@ -121,7 +112,7 @@ class App extends React.Component {
   }
 
   getDishes() {
-    // first need to use the restaurantId in the url path, 
+    // first need to use the restaurantId in the url path,
     // then use it to get restaurantName, then get data based on restaurantName
     const restaurantId = window.location.pathname.slice(1);
 
@@ -193,7 +184,7 @@ class App extends React.Component {
         <MainContainer id='main'>
           <TitleMenuContainer>
             <Title>Popular Dishes</Title>
-            <FullMenu onClick={this.showModal} className={this.state.fullMenuHover ? 'hoverOn' : 'hoverOff'}>Full Menu</FullMenu>
+            <FullMenu onClick={this.showModal} className={this.state.fullMenuHover ? 'hoverOn' : 'hoverOff'}>Full Menu </FullMenu>
             <RightArrow onClick={this.scroll.bind(null, -1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollLeft.png" alt="scroll right icon" width="100%" height="100%"></img></RightArrow>
             <LeftArrow className="leftArrow" onClick={this.scroll.bind(null, 1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollRight.png" alt="scroll left icon" width="100%" height="100%"></img></LeftArrow>
           </TitleMenuContainer>
@@ -215,14 +206,11 @@ class App extends React.Component {
       <MainContainer id="main">
         <TitleMenuContainer>
           <Title>Popular Dishes</Title>
-          <FullMenuAndArrowsContainer>
+          <div className="menuClick">
             <FullMenu className="fullMenu" onClick={this.showModal} onMouseEnter={this.setTrueFullMenuHover} onMouseLeave={this.setFalseFullMenuHover} className={this.state.fullMenuHover ? 'hoverOn' : 'hoverOff'}>Full Menu</FullMenu>
-            <ArrowsContainer>
-              <RightArrow onClick={this.scroll.bind(null, -1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollLeft.png" alt="scroll right icon" width="100%" height="100%"></img></RightArrow>
-              <LeftArrow onClick={this.scroll.bind(null, 1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollRight.png" alt="scroll left icon" width="100%" height="100%"></img></LeftArrow>
-            </ArrowsContainer>
-          </FullMenuAndArrowsContainer>
-
+            <RightArrow onClick={this.scroll.bind(null, -1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollLeft.png" alt="scroll right icon" width="100%" height="100%"></img></RightArrow>
+            <LeftArrow onClick={this.scroll.bind(null, 1)}><img src="https://s3.us-east-2.amazonaws.com/yelpsfphotos/scrollRight.png" alt="scroll left icon" width="100%" height="100%"></img></LeftArrow>
+          </div>
         </TitleMenuContainer>
 
         <PopularDishesContainer className='popDishesContainer'>
