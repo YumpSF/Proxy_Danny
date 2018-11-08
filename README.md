@@ -2,6 +2,9 @@
 
 > Restaurant Review app. Recreates the user experience of the the popular website Yelp. 
 
+![screen shot 2018-11-07 at 7 34 18 pm](https://user-images.githubusercontent.com/11156534/48176431-d0d6b700-e2c4-11e8-8333-64835e31ce95.png)
+![screen shot 2018-11-07 at 7 34 30 pm](https://user-images.githubusercontent.com/11156534/48176434-d3d1a780-e2c4-11e8-8be1-3c2d50c3fd97.png)
+
 ## Related Projects
 
   - https://github.com/YumpSF/popular-dishes-and-full-menu
