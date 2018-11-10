@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+    client:
+      build: proxy/
+      ports:
+        - "1337:1337"
