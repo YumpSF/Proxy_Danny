@@ -1,5 +1,0 @@
-{
-  presets: ['@babel/preset-react', '@babel/preset-env', 'babel-preset-airbnb'],
-  plugins: ['@babel/plugin-proposal-class-properties'],
-}
-
